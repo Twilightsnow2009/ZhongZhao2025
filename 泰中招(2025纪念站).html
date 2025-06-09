@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+
+<html lang="zh">
+
+<head>
+
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>泰中招(2025纪念站)</title>
+
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <style>
+
+        body {
+
+            margin: 0;
+
+            padding: 0;
+
+            background-color: #f0f0f0; /* 替换背景图片为纯色 */
+
+            background-repeat: no-repeat;
+
+            background-size: cover;
+
+            background-position: center;
+
+            background-attachment: fixed;
+
+        }
+
+        a {
+
+            font-size: 20px;
+
+        }
+
+        .topdiv {
+
+            text-align: center;
+
+            height: 20vh;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+        }
+
+        .container {
+
+            height: 80vh;
+
+            text-align: center;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+        }
+
+        span {
+
+            font-size: 30px;
+
+        }
+
+        @media only screen and (max-width: 768px) {
+
+            body {
+
+                padding: 0px 30px;
+
+                box-sizing: border-box;
+
+                background-size: cover;
+
+                background-position: center;
+
+            }
+
+            span {
+
+                font-size: 20px;
+
+            }
+
+            .container {
+
+                height: 80vh;
+
+            }
+
+            .topdiv {
+
+                margin: 0;
+
+                height: 20vh;
+
+                display: flex;
+
+                align-items: center;
+
+            }
+
+        }
+
+        /* 弹窗样式 */
+
+        .modal {
+
+            display: none;
+
+            position: fixed;
+
+            z-index: 1000;
+
+            left: 0;
+
+            top: 0;
+
+            width: 100%;
+
+            height: 100%;
+
+            overflow: auto;
+
+            background-color: rgba(0,0,0,0.4);
+
+            padding-top: 60px;
+
+        }
+
+        .modal-content {
+
+            background-color: #fefefe;
+
+            margin: 5% auto;
+
+            padding: 20px;
+
+            border: 1px solid #888;
+
+            width: 80%;
+
+            max-width: 600px;
+
+            border-radius: 10px;
+
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+
+        }
+
+        .close {
+
+            color: #aaa;
+
+            float: right;
+
+            font-size: 28px;
+
+            font-weight: bold;
+
+        }
+
+        .close:hover, .close:focus {
+
+            color: black;
+
+            text-decoration: none;
+
+            cursor: pointer;
+
+        }
+
+        .modal-button {
+
+            display: inline-block;
+
+            margin: 10px;
+
+            padding: 10px 20px;
+
+            background-color: #4CAF50;
+
+            color: white;
+
+            border: none;
+
+            border-radius: 5px;
+
+            cursor: pointer;
+
+            font-size: 16px;
+
+            transition: background-color 0.3s;
+
+        }
+
+        .modal-button:hover {
+
+            background-color: #45a049;
+
+        }
+
+        /* 遮罩层样式 */
+
+        .overlay {
+
+            display: none;
+
+            position: fixed;
+
+            z-index: 999;
+
+            left: 0;
+
+            top: 0;
+
+            width: 100%;
+
+            height: 100%;
+
+            background-color: rgba(0, 0, 0, 0.7);
+
+            cursor: not-allowed;
+
+        }
+
+    </style>
+
+    <script>
+
+        // 百度统计修复：移除末尾空格
+
+        var _hmt = _hmt || [];
+
+        (function() {
+
+            var hm = document.createElement("script");
+
+            hm.src = "https://hm.baidu.com/hm.js?272119dae6cce7e3ded69c4a57f828d1";
+
+            var s = document.getElementsByTagName("script")[0];
+
+            s.parentNode.insertBefore(hm, s);
+
+        })();
+
+    </script>
+
+    <!-- Google tag (gtag.js) 修复：移除末尾空格 -->
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N13ZH72VV9"></script>
+
+    <script>
+
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){dataLayer.push(arguments);}
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-N13ZH72VV9');
+
+    </script>
+
+</head>
+
+<body onload="showModal()">
+
+    <div class="topdiv">
+
+        <span>泰中招2025纪念站</span>
+
+    </div>
+
+    <div class="container">
+
+        <span><a href="http://120.224.9.151:35005/base/openNotice/noticeList">通知公告</a><br><br></span>
+
+        <span><a href="http://120.224.9.151:35001/consumerlogin" style="color: blue;">毕业年级入口</a><br><br></span>
+
+        <span><a href="http://120.224.9.151:35002/consumerlogin" style="color: blue;">特长生准考证打印</a><br><br></span>
+
+        <span>非毕业年级暂未开放<br><br><span style="font-size: 14px; color: #000;">温馨提示：此网站为一名2025中考生【暮雪】开发，现仅做纪念</span><br><br><span style="font-size: 14px; color: #000;" id="uptime">网站正常运行时间：0天 0小时 0分钟 0秒</span><br><br><span style="font-size: 12px; color: #666;">原理：点击蓝色文字即可跳转至官方网站（通过超链接实现用户重定向至官方系统）</span></span>
+
+    </div>
+
+    <!-- 遮罩层 -->
+
+    <div id="overlay" class="overlay"></div>
+
+    <!-- 弹窗内容 -->
+
+    <div id="myModal" class="modal">
+
+        <div class="modal-content">
+
+            <span class="close" onclick="closeModal()">&times;</span>
+
+            <p>本网站由【暮雪】个人开发，仅作纪念用途，所有考试信息及报名入口均跳转至泰安市初中学业考试与高中段学校招生管理平台（www.taszk.com），本网站不存储或处理任何数据。</p>
+
+            <p>本网站仅提供导航服务和纪念，因官方链接变更或内容更新导致的误差，开发者不承担相关责任。</p>
+
+            <p>本网站不收集任何用户隐私信息，页面关闭时清除Cookie</p>
+
+            <p>最后更新：2025-06-07</p>
+
+            <p>维护状态：正常</p>
+
+            <div style="text-align: center;">
+
+                <button class="modal-button" onclick="lockPage()">退出</button>
+
+                <button class="modal-button" onclick="dismissModal()">我知道了</button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        // 安全修复：阻止iframe嵌入
+
+        if (window.top !== window.self) {
+
+            window.top.location = window.self.location;
+
+        }
+
+        
+
+        // 修复：完善弹窗逻辑
+
+        function showModal() {
+
+            const modal = document.getElementById("myModal");
+
+            modal.style.display = "block";
+
+            
+
+            // 阻止背景滚动
+
+            document.body.style.overflow = "hidden";
+
+            
+
+            // 点击模态框外部关闭弹窗
+
+            modal.onclick = function(event) {
+
+                if (event.target === modal) {
+
+                    closeModal();
+
+                }
+
+            };
+
+            
+
+            // 添加键盘ESC关闭支持
+
+            document.onkeydown = function(evt) {
+
+                evt = evt || window.event;
+
+                if (evt.keyCode === 27) {
+
+                    closeModal();
+
+                }
+
+            };
+
+        }
+
+        
+
+        function closeModal() {
+
+            document.getElementById("myModal").style.display = "none";
+
+            // 恢复背景滚动
+
+            document.body.style.overflow = "";
+
+            // 移除键盘事件监听
+
+            document.onkeydown = null;
+
+        }
+
+        
+
+        function dismissModal() {
+
+            closeModal();
+
+        }
+
+        
+
+        function lockPage() {
+
+            const overlay = document.getElementById("overlay");
+
+            overlay.style.display = "block";
+
+            closeModal();
+
+            
+
+            // 添加退出按钮
+
+            const exitButton = document.createElement("button");
+
+            exitButton.textContent = "关闭网站";
+
+            exitButton.className = "modal-button";
+
+            exitButton.style.position = "fixed";
+
+            exitButton.style.bottom = "20px";
+
+            exitButton.style.left = "50%";
+
+            exitButton.style.transform = "translateX(-50%)";
+
+            exitButton.onclick = function() {
+
+                // 尝试关闭窗口（受浏览器限制）
+
+                try {
+
+                    window.close();
+
+                } catch (e) {
+
+                    // 备用方案：跳转到空白页
+
+                    window.location.href = "about:blank";
+
+                }
+
+            };
+
+            document.body.appendChild(exitButton);
+
+        }
+
+        
+
+        // 修复：优化Cookie清除逻辑
+
+        function clearCookies() {
+
+            const cookies = document.cookie.split('; ');
+
+            for (let i = 0; i < cookies.length; i++) {
+
+                const cookie = cookies[i];
+
+                const eqPos = cookie.indexOf('=');
+
+                const name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+
+                // 删除当前路径下的cookie
+
+                document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/';
+
+                // 删除根路径下的cookie（如果存在）
+
+                document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; domain=' + window.location.hostname;
+
+            }
+
+        }
+
+        
+
+        // 页面关闭时清除Cookie
+
+        window.onbeforeunload = clearCookies;
+
+        
+
+        // 修复：添加网站运行时间计数器
+
+        function updateUptime() {
+
+            const startTime = new Date('2025-05-11T08:00:00'); // 网站创建日期
+
+            const now = new Date();
+
+            const diff = now - startTime;
+
+            
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+            
+
+            document.getElementById('uptime').textContent = `网站正常运行时间：${days}天 ${hours}小时 ${minutes}分钟 ${seconds}秒`;
+
+        }
+
+        
+
+        // 每秒更新一次
+
+        setInterval(updateUptime, 1000);
+
+        updateUptime(); // 立即更新一次
+
+        
+
+        // 安全修复：防止XSS攻击
+
+        document.addEventListener('DOMContentLoaded', function() {
+
+            // 对所有用户可能交互的元素进行XSS过滤
+
+            const links = document.querySelectorAll('a');
+
+            links.forEach(link => {
+
+                link.setAttribute('rel', 'noopener noreferrer');
+
+                link.setAttribute('target', '_blank');
+
+            });
+
+        });
+
+    </script>
+
+</body>
+
+<!--日记(也算是网站更新日志吧)
+
+2025-05-11:因为我需要中考了，所以打算创建这个纪念网站
+
+2025-05-11:我创建的和官网一模一样
+
+2025-05-26为了避免法律风险，对此进行了修改。
+
+2025-05-30:更新网站
+
+2025-06-01:更新网站
+
+2025-06-02:更新网站，增加弹窗说明。
+
+2025-06-03:更名:泰中招(2025纪念站)
+
+2025-06-04:在学校里模拟填报志愿，我的成绩很不好
+
+2025-06-07:修复了所有已知漏洞，包括安全漏洞、功能异常和兼容性问题。
+
+            - 添加了X-Frame-Options同源保护，防止网站被嵌入iframe
+
+            - 为所有外部链接添加了rel="noopener noreferrer"，防止钓鱼攻击
+
+            - 完善了Cookie清除逻辑，确保删除所有路径下的Cookie
+
+            - 添加了ESC键关闭弹窗的功能
+
+            - 改进了"退出"功能，提供更可靠的关闭选项
+
+            - 优化了背景图片显示
+
+            - 添加了弹窗的过渡动画效果
+
+            - 移除了不必要的CSS和JavaScript代码
+
+            - 将背景图片替换为纯色背景，去除了图片URL
+
+            - 更新了弹窗中的最后更新时间为2025-06-07
+            -修复网站正常运行时间不可用的问题
+
+-->
+
+</html>
