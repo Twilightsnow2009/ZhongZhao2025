@@ -24,9 +24,7 @@
 
 ## 如何使用
 1. **下载项目文件**：
-   - 访问本仓库中的[泰中招(2025纪念站).html]
-[https://github.com/Twilightsnow2009/TaiZhongZhao2025/blob/main/%E6%B3%B0%E4%B8%AD%E6%8B%9B(2025%E7%BA%AA%E5%BF%B5%E7%AB%99).html]
-   - 并下载该文件到你的本地计算机。
+   - 访问本仓库中的[泰中招(2025纪念站).html]文件并下载该文件到你的本地计算机。
 
 3. **打开项目**：
    - 双击下载的文件或使用任何现代浏览器打开该HTML文件。
@@ -79,9 +77,9 @@
 
 - 作者：暮雪
 - 哔哩哔哩:暮雪微晴
-(WEB //space.bilibili.com/3493294795393244)
+https://space.bilibili.com/3493294795393244
 - 邮箱：---
-- GitHub：[@Twilightsnow2009](https://github.com/Twilightsnow2009)
+-GitHub:[@ Twilightsnow2009](https://github.com/Twilightsnow2009)
 
 ## 致谢
 
