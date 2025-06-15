@@ -20,6 +20,12 @@
 
 ## 重要警告:由于该网站(演示网址)使用境外的免费托管服务器，所以大家不要在该网站上输入任何敏感信息，并提高警惕！！！
 
+网站是否支持"支付卡行业数据安全标准(Payment Card Industry Data Security Standard)"（检测结果可供参考）↓
+
+安全评级等级:	T（有A+、ABCDEF级别）
+请求传输安全等级:	不合格（请求Request&Response是否安全加密）
+支付安全等级:	不合格（是否具备支付级别安全）
+
 演示网址:https://share.htmlput.com/p/yhqczvxwen?lang=zh
 
 温馨提示：该网站使用第三方免费托管(htmlput)稳定性较差,如果无法访问可以多刷新几遍,或待会儿访问。
